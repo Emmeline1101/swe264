@@ -13,7 +13,7 @@ a student & course system based on event bus arch.
 ```
   
  ## Function of the class
-• ’SystemMain.java‘: Has the main() method and creates the system structure by instantiating all 
+• ’SystemMain.java‘ : Has the main() method and creates the system structure by instantiating all 
 of the components and starting the ClientInput component. (initialize the whole project)  
 • ClientInput.java: Presents the main menu and broadcasts service requests to the other 
 components based on user input. (receive the input & show result)  

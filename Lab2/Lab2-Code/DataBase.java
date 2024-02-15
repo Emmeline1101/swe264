@@ -50,7 +50,7 @@ public class DataBase {
         this.vCourse  = new ArrayList();
 
         // Populate student and course lists.
-        while (objStudentFile.ready()) {
+        while (objStudentFile.ready()) {//ready method is for whether the input stream will be clogged
             this.vStudent.add(new Student(objStudentFile.readLine()));
         }
         while (objCourseFile.ready()) {
@@ -182,6 +182,9 @@ public class DataBase {
         if (objStudent != null && objCourse != null) {
             objStudent.registerCourse(objCourse);
             objCourse.registerStudent(objStudent);
+            if (objCourse.getRegisteredStudents().size() > 3){
+                EventBus.announce(EventBus.EV_COURSE_OVERBOOKED, "Course" + sCID + "is overbooked.");
+            }
         }
     }
 }

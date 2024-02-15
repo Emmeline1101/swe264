@@ -49,11 +49,10 @@ public class RegisterStudentHandler extends CommandEventHandler {
         }
 
         // Check if the given course conflicts with any of the courses the student has registered.
-        ArrayList vCourse = objStudent.getRegisteredCourses();
-        for (int i=0; i<vCourse.size(); i++) {
-            if (((Course) vCourse.get(i)).conflicts(objCourse)) {
-                return "Registration conflicts";
-            }
+        // Create a CourseConflictChecker instance and check for conflicts.
+        CourseConflictChecker conflictChecker = new CourseConflictChecker(this.objDataBase);
+        if (conflictChecker.checkConflict(sSID, objCourse)) {
+            return "Registration conflicts";
         }
 
         // Request validated. Proceed to register.

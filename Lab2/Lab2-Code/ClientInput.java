@@ -44,6 +44,7 @@ public class ClientInput extends Thread {
                 EventBus.announce(EventBus.EV_SHOW, "x) Exit");
                 EventBus.announce(EventBus.EV_SHOW, "\nEnter your choice and press return >> ");
                 String sChoice = objReader.readLine().trim();
+                EventBus.announce(EventBus.EV_SHOW, "User selected: " + sChoice);
 
                 // Execute command 1: List all students.
                 if (sChoice.equals("1")) {
@@ -66,8 +67,10 @@ public class ClientInput extends Thread {
                     // Get course ID and course section from user.
                     EventBus.announce(EventBus.EV_SHOW, "\nEnter course ID and press return >> ");
                     String sCID = objReader.readLine().trim();
+                    EventBus.announce(EventBus.EV_SHOW, "User selected: " + sCID);
                     EventBus.announce(EventBus.EV_SHOW, "\nEnter course section and press return >> ");
                     String sSection = objReader.readLine().trim();
+                    EventBus.announce(EventBus.EV_SHOW, "User selected: " + sSection);
 
                     // Announce the command event #3 with course ID and course section.
                     EventBus.announce(EventBus.EV_SHOW, "\n");
@@ -80,7 +83,7 @@ public class ClientInput extends Thread {
                     // Get student ID from user.
                     EventBus.announce(EventBus.EV_SHOW, "\nEnter student ID and press return >> ");
                     String sSID = objReader.readLine().trim();
-
+                    EventBus.announce(EventBus.EV_SHOW, "User selected: " + sSID);
                     // Announce the command event #4 with student ID.
                     EventBus.announce(EventBus.EV_SHOW, "\n");
                     EventBus.announce(EventBus.EV_LIST_COURSES_REGISTERED, sSID);
@@ -92,7 +95,7 @@ public class ClientInput extends Thread {
                     // Get student ID from user.
                     EventBus.announce(EventBus.EV_SHOW, "\nEnter student ID and press return >> ");
                     String sSID = objReader.readLine().trim();
-
+                    EventBus.announce(EventBus.EV_SHOW, "User selected: " + sSID);
                     // Announce the command event #5 with student ID.
                     EventBus.announce(EventBus.EV_SHOW, "\n");
                     EventBus.announce(EventBus.EV_LIST_COURSES_COMPLETED, sSID);
@@ -104,10 +107,13 @@ public class ClientInput extends Thread {
                     // Get student ID, course ID, and course section from user.
                     EventBus.announce(EventBus.EV_SHOW, "\nEnter student ID and press return >> ");
                     String sSID = objReader.readLine().trim();
+                    EventBus.announce(EventBus.EV_SHOW, "User selected: " + sSID);
                     EventBus.announce(EventBus.EV_SHOW, "\nEnter course ID and press return >> ");
                     String sCID = objReader.readLine().trim();
+                    EventBus.announce(EventBus.EV_SHOW, "User selected: " + sCID);
                     EventBus.announce(EventBus.EV_SHOW, "\nEnter course section and press return >> ");
                     String sSection = objReader.readLine().trim();
+                    EventBus.announce(EventBus.EV_SHOW, "User selected: " + sSection);
 
                     // Announce the command event #5 with student ID, course ID, and course section.
                     EventBus.announce(EventBus.EV_SHOW, "\n");

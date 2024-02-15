@@ -93,7 +93,7 @@ public class Student {
       *
       * @param  sSID a string representing a student ID
       * @return <code>true</code> if <code>sSID</code> is equal to the ID of this student record
-      * @see    #match(String,String)
+      * @see   // #match(String,String)
       */
     public boolean match(String sSID) {
         return this.sSID.equals(sSID);

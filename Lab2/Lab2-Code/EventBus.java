@@ -69,6 +69,10 @@ public class EventBus {
      * Command event #6 definition: register a student for a course. 
      */
     public static final int EV_REGISTER_STUDENT = 6;
+    /**
+     * Command event #7 definition: the number of student registered is greater than 3
+     */
+    public static final int EV_COURSE_OVERBOOKED = 7;
 
     /**
      * The number of defined events.

@@ -54,8 +54,8 @@ class SystemMain {
 			ListAllStudentsHandler objCommandEventHandler1 =
 				new ListAllStudentsHandler(
 					db,
-					EventBus.EV_LIST_ALL_STUDENTS,
-					EventBus.EV_SHOW);
+					EventBus.EV_LIST_ALL_STUDENTS,//subscribe
+					EventBus.EV_SHOW);//show result
 			ListAllCoursesHandler objCommandEventHandler2 =
 				new ListAllCoursesHandler(
 					db,
@@ -82,8 +82,13 @@ class SystemMain {
 					EventBus.EV_REGISTER_STUDENT,
 					EventBus.EV_SHOW);
 
+			OverbookedNotifier overbookedNotifier = new OverbookedNotifier();
+
 			ClientInput objClientInput = new ClientInput();
 			ClientOutput objClientOutput = new ClientOutput();
+
+			LogHandler logHandler = new LogHandler("school system.log");
+			EventBus.subscribeTo(EventBus.EV_SHOW, logHandler);
 
 			// Start the system.
 			objClientInput.start();

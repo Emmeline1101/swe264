@@ -169,7 +169,7 @@ public class Course {
     /**
      * Register a student.
      *
-     * @param the reference to the student object to register.
+     * @param //the reference to the student object to register.
      * @see   Student#registerCourse(Course)
      */
     public void registerStudent(Student objStudent) {
